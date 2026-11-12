@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "DailyLog": {
+      "title": "DailyLog",
+      "description": "Daily logged routines for a specific user and date",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "dateStr": { "type": "string" },
+        "logs": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "dateStr", "logs"]
+    },
+    "UserConfig": {
+      "title": "UserConfig",
+      "description": "User routine sequence and active timer metadata",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "routines": { "type": "array" },
+        "currentRoutineIndex": { "type": "number" },
+        "lastTimestamp": { "type": "number" },
+        "lastAction": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/dailyLogs/{dateStr}": {
+      "schema": { "$ref": "#/entities/DailyLog" },
+      "description": "User's daily routine logs by date"
+    },
+    "/users/{userId}/config/{configId}": {
+      "schema": { "$ref": "#/entities/UserConfig" },
+      "description": "User's routine configuration and timer state"
+    }
+  }
+}

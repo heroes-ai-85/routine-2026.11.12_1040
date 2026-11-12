@@ -1,0 +1,6 @@
+{
+  "name": "원터치 일상 기록기 - 루틴 & 시간 추적",
+  "description": "버튼 하나로 하루 일상을 기록하고 이전 행동과의 경과 시간 및 수면 시간을 실시간 측정하는 일상 관리 앱",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
